@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
 function Counter() {
-    const [cart, setCart] = useState({
-        item: "apple", 
-        quantity: 0,
-    });
-    
-
-    function addApple() {
-       setCart (prevCart => ({
-        ...prevCart, 
-        quantity: prevCart.quantity +1
-       }))
+    const [arr, setArr] = useState ([])
+        
+    function addPlus () {
+    setArr (prevArr => [ ...prevArr, "+"])
     }
+
+
+
+    function addMinus() {
+        setArr (prevArr => [ ...prevArr, "-"])
+    }
+    
    return (
     <div>
-    <button onClick={() => null}>-</button>
-    {cart.quantity}
-    {cart.item}
-    <button onClick={addApple}>+</button>
+    <button onClick={addMinus}>-</button>
+    <button onClick={addPlus}>+</button>
+    {arr.toString()}
+    
     </div>
    );
 }
